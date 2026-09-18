@@ -143,7 +143,20 @@ STORAGES = {
 }
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+# تنظیمات استاتیک
+STATIC_URL = "/static/"
+STATIC_ROOT = BASE_DIR / "staticfiles"
+STATICFILES_DIRS = [BASE_DIR / "static"]  # اگر پوشه static دارید
 
+# این بخش جدید را اضافه کنید:
+STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
+    },
+}
 # ---------------------------------------------------------------------------
 # Crispy forms (Bootstrap 5)
 # ---------------------------------------------------------------------------
