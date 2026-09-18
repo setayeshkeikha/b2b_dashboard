@@ -16,7 +16,15 @@ environ.Env.read_env(BASE_DIR / ".env")
 
 SECRET_KEY = env("DJANGO_SECRET_KEY", default="django-insecure-change-me-in-production")
 DEBUG = env.bool("DEBUG", default=True)
-ALLOWED_HOSTS = ['b2b-dashboard1.onrender.com']
+ALLOWED_HOSTS = [
+    'b2b-dashboard5.onrender.com',  # آدرس دقیق Render خود را اینجا بگذارید
+    'localhost',
+    '127.0.0.1',
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://b2b-dashboard5.onrender.com',  # آدرس با https
+]
 
 # ---------------------------------------------------------------------------
 # Applications
