@@ -96,6 +96,15 @@ DATABASES = {
 
 # ---------------------------------------------------------------------------
 # Auth
+
+STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
+    },
+}
 # ---------------------------------------------------------------------------
 AUTH_USER_MODEL = "accounts.User"
 
